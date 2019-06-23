@@ -1,0 +1,23 @@
+{
+  "name": "bamazon-hw",
+  "version": "1.0.0",
+  "description": "cli application to host a online store",
+  "main": "bamazon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjensen113/bamazon-hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjensen113/bamazon-hw/issues"
+  },
+  "homepage": "https://github.com/tjensen113/bamazon-hw#readme",
+  "dependencies": {
+    "inquirer": "^6.4.1",
+    "mysql": "^2.17.1"
+  }
+}
