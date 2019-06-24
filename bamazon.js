@@ -12,12 +12,21 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
 	if(err)throw err;
 	console.log("connected as id" + connection.threadId);
+	
 
 	start();
 });
+console.table();
+
 
 function start(){
 	inquirer.prompt({
-		
+		name: "Purchase",
+		type: "input",
+		message: "Please enter id of the item you would like to purchase",
+		filter: Number
+	
+
 	})
-}
+	
+};
