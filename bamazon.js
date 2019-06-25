@@ -9,14 +9,14 @@ var connection = mysql.createConnection({
 	database:"bamazon"
 });
 
-connection.connect(function(err){
+connection.connect(function(err,){
 	if(err)throw err;
-	console.log("connected as id" + connection.threadId);
-	
+	console.log("connected as id" + connection.threadId)
+
 
 	start();
 });
-console.table();
+
 
 
 function start(){
@@ -25,8 +25,16 @@ function start(){
 		type: "input",
 		message: "Please enter id of the item you would like to purchase",
 		filter: Number
-	
+	},
+	{
+		name:"Quanity",
+		type: "input",
+		message: "Please enter the quanity of the item you would like to purchase",
+		filter: Number
 
 	})
-	
+	.then(function(){
+		connection.query(SELECT)
+
+	})
 };
