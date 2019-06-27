@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/thomasjensen/Documents/wismil201901fsf3/12-mysql/01-Activities"
 		}
 	],
 	"settings": {}
