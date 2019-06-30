@@ -1,8 +1,5 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-// const cTable = require('console.table');
-
-// create the connection information for the sql database
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -10,14 +7,14 @@ var connection = mysql.createConnection({
   password: "1212QWqw12",
   database: "bamazon"
 });
-// connect to the mysql server and sql database
+
 connection.connect(function(err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId + "\n");
   start();       
 });
 var totalCost = 0;
-function start() {    //show inventory first after the connection is made
+function start() {    
   
   connection.query("SELECT item_id, product_name, price FROM products", function(err, res) {
     if (err) throw err;
@@ -36,7 +33,7 @@ function start() {    //show inventory first after the connection is made
       }
     ]).then(function(answer){
       
-      // when finished prompting, check existenses to proced or prevent order
+     
       connection.query("SELECT  * FROM products WHERE ?",
         {item_id:answer.choice}, function (err, res) {
       
@@ -61,9 +58,9 @@ function start() {    //show inventory first after the connection is made
                 }
               });
               
-          } //end of if
+          } 
 
-           else {  //update Inventory;
+           else {  
             console.log("All items in stock!!");
             totalCost= totalCost + res[0].price * answer.quantity;
             var newQuantity = res[0].stock_quantity - answer.quantity;
@@ -83,15 +80,15 @@ function start() {    //show inventory first after the connection is made
                     connection.end();
                   }
                   
-              }) //end of then
+              }) 
 
-            } ) // end of connection query
+            } ) 
             
-          };//end of else
+          };
           
          
-        }); // end of function
+        }); 
         
-    })  //end of then     
+    })      
   })
-} //end of start() 
+} 
