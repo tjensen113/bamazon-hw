@@ -8,4 +8,5 @@ Then, prompt users with two messages:
    * The first asks them the ID of the product they would like to buy.
    * The second message asks how many units of the product they would like to buy.
    * Then the database will be updated on new current stock.
+   * The user is prompted to make another purchase with a Y/N response
    * Finally the user will be updated on their total for their purchase.
